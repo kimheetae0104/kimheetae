@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Exam01 {
-	//Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ 1ÀÇÀÚ¸®¿¡¼­ ¹İ¿Ã¸² ÇÑ °á°ú¸¦ Ãâ·ÂÇÏ½Ã¿À.
+	//ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ 1ì˜ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ í•œ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 	public static void main(String[] args) {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("¹İ¿Ã¸² Àü°ª : ");
+		System.out.println("ë°˜ì˜¬ë¦¼ ì „ê°’ : ");
 		int num = sc.nextInt();
 		if (num % 10 < 5) {
 			System.out.println(num / 10 * 10);
