@@ -1,15 +1,15 @@
-package È¥ÀÚ°øºÎÇÏ±â;
+package í˜¼ìê³µë¶€í•˜ê¸°;
 
 import java.util.Random;
 
-public class ¹è¿­ {
+public class ë°°ì—´ {
 
 	public static void main(String[] args) {
 		Random r = new Random();
 		int[] array = new int[8];
 		int max = 0;
 		int min = 0;
-		System.out.println("¹è¿­¿¡ ÀÖ´Â ¸ğµç °ª : ");
+		System.out.println("ë°°ì—´ì— ìˆëŠ” ëª¨ë“  ê°’ : ");
 		for (int i = 0; i < array.length; i++) {
 			array[i] = r.nextInt(100) + 1;
 			if (i == 0) {
@@ -23,8 +23,8 @@ public class ¹è¿­ {
 			System.out.println(array[i] + "\t");
 		}
 		System.out.println();
-		System.out.println("°¡Àå Å« °ª : " + max);
-		System.out.println("°¡Àå ÀÛÀº °ª : " + min);
+		System.out.println("ê°€ì¥ í° ê°’ : " + max);
+		System.out.println("ê°€ì¥ ì‘ì€ ê°’ : " + min);
 
 	}
 
