@@ -1,6 +1,6 @@
-package È¥ÀÚ°øºÎÇÏ±â;
+package í˜¼ìê³µë¶€í•˜ê¸°;
 
-public class ÀÚ¹ÙÀÇÁ¤¼®4_7 {
+public class ìë°”ì˜ì •ì„4_7 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
