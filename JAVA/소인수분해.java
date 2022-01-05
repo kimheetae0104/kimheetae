@@ -1,12 +1,12 @@
-package È¥ÀÚ°øºÎÇÏ±â;
+package í˜¼ìê³µë¶€í•˜ê¸°;
 
 import java.util.Scanner;
 
-public class ¼ÒÀÎ¼öºĞÇØ {
+public class ì†Œì¸ìˆ˜ë¶„í•´ {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("¼ÒÀÎ¼öºĞÇØ ÇÒ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì†Œì¸ìˆ˜ë¶„í•´ í•  ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int num = sc.nextInt();
 
 		System.out.print(num+" = ");
