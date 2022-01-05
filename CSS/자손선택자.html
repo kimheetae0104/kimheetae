@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id 속성값으로 header를 가지는 태그의 후손 위치에 있는 h1태그의
+        color 속성에 red 키워드를 적용합니다. */
+        #header > h1 { color: red;}
+        /* id 속성값으로 section을 가지는 태그의 후손 위치에 있는 h1 태그의
+        color 속성에 orange 키워드를 적용합니다. */
+        #section > h1 {color: orange;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic perspiciatis magnam illum est error, consequatur perferendis? Illo laboriosam doloribus iusto incidunt adipisci sapiente aspernatur voluptatum repellat dolor. Ut, laudantium deserunt?</h1>
+        <p>lorem ipsum dolor</p>
+    </div>
+    <div>
+        <h1>CSS3 Selector Basic</h1>
+        <h2>Lorem ipsum</h2>
+        <ul>
+            <li>universal selector</li>
+            <li>type selector</li>
+            <li>id & class selector</li>
+        </ul>
+    </div>
+</body>
+</html>

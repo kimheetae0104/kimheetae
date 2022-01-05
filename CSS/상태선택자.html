@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Selector Basic</title>
+    <style>
+        
+        /* input 태그의 type 속성값이 checkbox인 태그가 체크되었을때
+        바로 뒤에 위치하는 div 태그의 height 속성에 0픽셀을 적용합니다. */
+        input[type=checkbox]:checked + div {
+            height: 0px;
+        }
+
+        div{
+            overflow: hidden;
+            width: 650px; height: 300px;
+
+            /*  변환 효과를 적용합니다. */
+            -ms-transition-duration: 1s;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            transition-duration: 1s;
+        }
+
+        /* input 태그가 사용 가능할 경우에
+        background-color 속성에 white 키워드를 적용합니다. */
+        input:enabled { background-color: white;}
+        
+        /* input 태그가 사용 불가능할 경우에
+        background-color 속성에 gray 키워드를 적용합니다. */
+        input:disabled { background-color: gray;}
+
+        /* input 태그에 초점이 맞춰진 경우에
+        background-color 속성에 orange 키워드를 적용합니다. */
+        input:focus { background-color: orange;}
+   </style>
+</head>
+<body>
+    <input type="checkbox" />
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <h2>enabled</h2>
+    <input />
+    <h2>disabled</h2>
+    <input disabled="disabled">
+</body>
+</html>
