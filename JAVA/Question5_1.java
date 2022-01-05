@@ -5,11 +5,11 @@ public class Question5_1 {
 	public static void main(String[] args) {
 		int[] array = new int[5];
 		Scanner sc = new Scanner(System.in);
-		System.out.print("java Á¡¼ö : ");
+		System.out.print("java ÃÂ¡Â¼Ã¶ : ");
 		int java = sc.nextInt();
-		System.out.print("web Á¡¼ö : ");
+		System.out.print("web ÃÂ¡Â¼Ã¶ : ");
 		int web = sc.nextInt();
-		System.out.print("and Á¡¼ö : ");
+		System.out.print("and ÃÂ¡Â¼Ã¶ : ");
 		int and = sc.nextInt();
 		
 		int sum = java+web+and;
