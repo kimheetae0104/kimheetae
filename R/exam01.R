@@ -1,120 +1,114 @@
-# 주석을 배워볼게요~~ 주석은 # 하나로 퉁쳐줄게요
-
-# 변수: 에 대해서 배워볼게용~~~~ 
-# 데이터를 저장할 수 있는 임시적인 공간 이에용~~
-# num이라는 이름의 변수안에 정수 100을 저장!! 해볼게요~~
-
- num <- 100
-num
-#함수 : 데이터를 넣으면 특정한 기능을 수행해 데이터를 가공하여 값으 출력~~~~~~
-sum(1,50,60,40,30)
-# 패키지 : 함수들을 모아놓은 묶음
-
-# 변수의 데이터 타입 
-# 숫자형 : 정수, 실수등의 숫자들을 저장할 수 있는 형태
-num1 <- 10.3
-
-# 문자형 : 알파벳 한글 등 문자데이터를 저장할 수 있는 형태
-text1 <- "Hello world!"
-text2 <- 'hello wlrld!'
-
-# 논리형 : 참 거짓을 저장할 수 있는 형태 
-
-ischeck <- TRUE
-ischeck <- FALSE
-ischeck <-F
-ischeck <-T
+# 벡터 :동일한 자료가 일차원으로 나열된 것 
+vec1 <-c(10,20,30,40,50)
+vec1
+vec2 <- c("사과",100, TRUE)
+vec2
 
 
-# NA & Null 형 뭘까요? 데이터의 상황을 저장할 수 있는 형태
-# NA -> 결측치 
-# NULL-> 비어있는 값 
+v_no<- seq(1:7)
+v_no<- 1:7
+v_no<- c(1:7)
+v_no
+v_name <-c("Apple","Peach","Banana","Grape","Kiwi","Orange","Mango")
+v_name
+v_price <-c(500,200,100,300,150,250,450)
+v_price
+v_stock <-c(5,2,4,7,5,3,8)
+v_stock
+# dataFrame 만드는 방법 data.frame()
+sales <- data.frame(v_no, v_name, v_pric, v_stock)
+sales
 
-sum(1,2,3,4,5,NA)
-sum(1,2,3,4,5,NULL)
+#자료구조를 좀 더 괜찮게 보는 방법 
+View(sales)
+# 데이터를 꺼냈는데 [] 가 없다면 data.frame 인 것을 쉽게 알수 있다 
+v_no
 
-name <- "김희태"
-name
-name <- "황정민"
-name
-# 변수 한개에 한개의 데이터만 저장
+# DataFrame에서 원하는 데이터만 조회하기 
+# sales 데이터프레임에서 v_name 값만 뽑아서 보기 
+# 해결방법 $ 를 쓰면 된다 
+# column을 빼면 대괄호가 생긴다 
 
-# 자료구조 : 대량의 데이터들을 효과적으로 관리할 수 있는 방법
-# 벡터(vector) : R 에서 가장 기본이 되는 데이터 구조
-# 동일한 유형의 데이터가 1차원으로 구성 배열과 같은 개념
-# 인덱스가 1부터 시작됨 0부터가 아님 배열과 다름 
+sales$v_name
 
-#숫자형 벡터 c()로 감싸주면 됨 
-v_num <- c(10,15,20)
-v_num
-
-#문자형 벡터
-v_text <-c("강남","강북",'뉴욕욕')
-v_text
-
-# 논리형 벡터
-V_log <- c(T,F,T,T)
-V_log
-
-v_text[2]
-
-#일률적인 벡터 생성(순차적이다 라는 말이다 알겠니?)
-v1 <- c(1,2,3,4,5,6,7,8,9,10)
-v2 <- seq(1,10) # 여러가지 조건식을 뽑을 수 있음
-v2
-v3 <- 1:10
-v3
-v4 <- seq(1,100 , by = 4)
-v4
-v5 <- seq(1,100, length.out =4)
-v5
-
-# 실습 
-foods <- c("간짜장", "족발","굴보쌈", "참돔","감자탕","순댓국")
-# 문제 1. 간짜장 굴보쌈 감자탕을 콘솔에 한 번에 출력하시오
-c(foods[1],foods[3],foods[5])
-foods[c(1,3,5)]
+# grape만 뽑고 싶을때 하나만 뽑고 싶을때 [행,열]
+sales[4,2]
+sales[3,] #3번째 행 전체 값을 가져옴 프레임 형태로 나옴 
+sales[ ,2] # 컬럼 명으로 벡터 형태로 출력됨 
 
 
-#불리언 인덱싱 -> true에 해당되는 값만 꺼내기
-x <- seq(1,20,by =3)
+# 데이터프레임에서 컬럼의 개수를 알 수 있는 방법 
 
-# x의 요소 중 5보다 큰 값만 꺼내기
+ncol(sales)
+sales[1,3:ncol(sales)]
+# 데이트프레임에서 행의 개수를 알 수 있는 방법
+nrow(sales)
+# 데이터프레임에서 컬럼의 이름들만 추출하는 방법
+names(sales)
 
-x[x>5]
+# 다양한 함수를 데이터프레임에 적용하기
+# 엑셀에서 사용하던 sum, div, add 등
+sum(sales$v_pric) # 총합 
+mean(sales$v_pric) #평균값 
+round(mean(sales$v_pric), digits = 2) # 소숫점 정리
+min(sales$v_pric)
+max(sales$v_pric)
+range(sales$v_pric)
 
-# x의 요소 중 7과 같은 값만 꺼내기 
-x[x == 7]
+No <- seq(1:10)
+No
+Name <- c("이은비","김서아","장하윤","유이서","나서윤","이지안","박나은","황유나","김하율","윤시아")
+Name
+Kor<- c(80,76,26,61,44,19,53,81,26,64)
+Kor
+Eng<- c(8,76,69,18,82,56,48,14,73,83)
+Eng
+Math<- c(65,27,100,76,37,77,73,19,74,60)
+Math
+
+Score <- data.frame(No,Name, Kor, Eng, Math)
+Score
+
+Score$Kor
+Score[,3]
+Score$Eng
+Score$Name
+names(Score)
+ncol(Score)
+nrow(Score)
+Score[0,0:ncol(Score)]  # 이건 잘못된 표현 행열은 1부터 시작하기 때문이다 
+Score[10,10:nrow(Score)]
+names(Score)
+round(mean(Score$Kor), digits = 1)
+mean(Score$Kor)
+max(Score$Eng)
+min(Score$Math)
 
 
-# 특정 요소를 제거하고 보기 
-x[-c(1,2,3)]
-x # 실제 x 의 값은 빠지는게 아니라 보여지는 것만 수정해서 보여줌 
+# 내가 작업하는 공간에 파일들의 목록 보기 
+list.files(score.xlsx)
+# 엑셀 데이터파일을 읽을 수 있는 함수들이 모여있는 패키지 다운로드하기 
+install.packages("readxl")
+# 한번만 해주면 끝~~~
 
-# 특정 위치의 요소값을 변경
-x[c(1,2)] <- 99
-x
+#패키지를 로딩하여 사용하기
+library(readxl)
+#함수를 사용하여 파일 불러오기
+Score_jan <- read_excel("score.xlsx",sheet="January") # 꼭 기억하기 파일명과 확장자까지 철자 틀리면 안됨
+Score_jan
+Score_fab <- read_excel("score.xlsx",sheet = "February")
+Score_fab
 
-#실습 예제 1 
-v1<-seq(100,300,by=3)
-v1
-
-#실습 예제2
-v1[c(20:30)]
-v1[seq(20,30)]
-v1[20:30]
-#실습 예제3
-v2 <-  v1[- c(20:30)]
-v2
-v1[-(20:30)]
-v1[-seq(20:30)]
-v1[-c(20,21,22,23,24,25,26,27,28,29,30)]
-
-#실습 예제 4
-
-v1[v1>200]
+# csv 파일을 읽어와서 데이터 프레임 형태로 저장
+titanic<- read.csv("titanic.csv")
+titanic
 
 
+#문자열 데이터를 범주형으로 읽어들이는 옵션 
+titanic_2 <- read.csv("titanic_2.csv", stringsAsFactors = T )
 
 
+list.files()
 
+heart <- read.csv("heart_failure_clinical_records_dataset.csv", stringsAsFactors = T)
+# 통계에서는 행을 관측치(observation)라고 하고 열을 변수(variables)라고 함 
